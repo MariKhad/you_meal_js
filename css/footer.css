@@ -1,0 +1,141 @@
+.footer {
+	padding: 24px 0;
+	background-color: #FFFFFF;
+}
+
+.footer__logo {
+	width: 196px;
+	color: #FF7020;
+	line-height: 1;
+	margin-bottom: 21px;
+}
+
+.footer__address {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 34px;
+	font-style: normal;
+	gap: 24px;
+}
+
+.footer__title {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 100%;
+	margin-bottom: 8px;
+}
+
+.footer__link-phone {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 12px;
+	line-height: 130%;
+	transition: color .3s ease-in-out;
+}
+
+.footer__link-sn {
+	transition: color .3s ease-in-out;
+	color: #FF7020;
+}
+
+.footer__link-phone:hover,
+.footer__link-phone:focus {
+	color: #FF7020;
+}
+
+.footer__developer:hover,
+.footer__developer:focus {
+	color: #FF7020;
+}
+
+.footer__link-sn:hover,
+.footer__link-sn:focus {
+	color: #FFAB08;
+}
+
+.footer__list {
+	display: flex;
+	gap: 16px;
+}
+
+.footer__development {
+	font-size: 12px;
+	line-height: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+@media (min-width: 480px) {
+	.footer__logo {
+		margin-bottom: 36px;
+	}
+
+	.footer__address {
+		flex-direction: row;
+		margin-bottom: 40px;
+	}
+
+	.footer__contact {
+		flex-grow: 1;
+	}
+}
+
+
+@media (min-width: 1024px) {
+	.footer__content {
+		display: grid;
+		grid-template-areas:
+			'logo address'
+			'development .';
+		/* 	justify-content: space-between; */
+		gap: 60px;
+	}
+
+	.footer__logo {
+		grid-area: logo;
+		width: 300px;
+		margin-bottom: 0;
+	}
+
+	.footer__contact {
+		flex-grow: unset;
+	}
+
+	.footer__address {
+		grid-area: address;
+		margin-bottom: 0;
+		gap: 50px;
+		justify-content: flex-end;
+	}
+
+	.footer__development {
+		grid-area: development;
+	}
+
+	.footer__title {
+		margin-bottom: 24px;
+		font-size: 24px;
+	}
+
+	.footer__title_sn {
+		margin-bottom: 22px;
+	}
+
+	.footer__link-phone {
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 1360px) {
+	.footer__content {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 60px 55px;
+	}
+
+	.footer__address {
+		gap: 50px;
+		justify-content: flex-start;
+	}
+}
