@@ -120,6 +120,10 @@
 	justify-content: space-between;
 }
 
+.order__total-wrapper {
+	display: flex;
+}
+
 .order__submit {
 	background-color: #FF7020;
 	border-radius: 8px;

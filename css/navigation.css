@@ -54,11 +54,11 @@
 	background-image: url('../img/burger.png');
 }
 
-.navigation__button_snacks {
+.navigation__button_snack {
 	background-image: url('../img/snacks.png');
 }
 
-.navigation__button_hotdog {
+.navigation__button_hot-dog {
 	background-image: url('../img/hotdog.png');
 }
 
@@ -66,7 +66,7 @@
 	background-image: url('../img/combo.png');
 }
 
-.navigation__button_donner {
+.navigation__button_shawarma {
 	background-image: url('../img/donner.png');
 }
 

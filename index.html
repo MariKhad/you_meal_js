@@ -19,6 +19,7 @@
 	<link rel="preload" href="fonts/nunito-v25-latin_cyrillic-600.woff2" as="font" crossorigin>
 	<link rel="preload" href="fonts/nunito-v25-latin_cyrillic-800.woff2" as="font" crossorigin>
 	<link rel="stylesheet" href="css/index.css">
+	<script src="js/main.js" type="module"></script>
 </head>
 
 <body>
@@ -42,22 +43,28 @@
 			<div class="container navigation__container">
 				<ul class="navigation__list">
 					<li class="navigation__item"><button
-							class="navigation__button navigation__button_burger navigation__button_active">Бургеры</button>
+							class="navigation__button navigation__button_burger navigation__button_active"
+							data-category="burger">Бургеры</button>
 					</li>
-					<li class="navigation__item"><button
-							class="navigation__button navigation__button_snacks">Закуски</button></li>
-					<li class="navigation__item"><button
-							class="navigation__button navigation__button_hotdog">Хот-доги</button></li>
-					<li class="navigation__item"><button class="navigation__button navigation__button_combo">Комбо</button>
+					<li class="navigation__item"><button class="navigation__button navigation__button_snack"
+							data-category="snack">Закуски</button></li>
+					<li class="navigation__item"><button class="navigation__button navigation__button_hot-dog"
+							data-category="hot-dog">Хот-доги</button></li>
+					<li class="navigation__item"><button class="navigation__button navigation__button_combo"
+							data-category="combo">Комбо</button>
 					</li>
-					<li class="navigation__item"><button class="navigation__button navigation__button_donner">Шаурма</button>
+					<li class="navigation__item"><button class="navigation__button navigation__button_shawarma"
+							data-category="shawarma">Шаурма</button>
 					</li>
-					<li class="navigation__item"><button class="navigation__button navigation__button_pizza">Пицца</button>
+					<li class="navigation__item"><button class="navigation__button navigation__button_pizza"
+							data-category="pizza">Пицца</button>
 					</li>
-					<li class="navigation__item"><button class="navigation__button navigation__button_wok">Вок</button></li>
-					<li class="navigation__item"><button
-							class="navigation__button navigation__button_dessert">Десерты</button></li>
-					<li class="navigation__item"><button class="navigation__button navigation__button_sauce">Соусы</button>
+					<li class="navigation__item"><button class="navigation__button navigation__button_wok"
+							data-category="wok">Вок</button></li>
+					<li class="navigation__item"><button class="navigation__button navigation__button_dessert"
+							data-category="dessert">Десерты</button></li>
+					<li class="navigation__item"><button class="navigation__button navigation__button_sauce"
+							data-category="sauce">Соусы</button>
 					</li>
 				</ul>
 			</div>
@@ -126,9 +133,11 @@
 							</ul>
 							<div class="order__total">
 								<p>Итого</p>
-								<p class="order__total-amount">1279
+								<div class="order__total-wrapper">
+									<p class="order__total-amount">1279
+									</p>
 									<span class="currency">₽</span>
-								</p>
+								</div>
 							</div>
 							<button class="order__submit">Оформить заказ</button>
 							<div class="order__wrap-appeal">
@@ -325,11 +334,11 @@
 						<div class="modal-product__btn">Добавить</div>
 						<div class="modal-product__count count">
 							<button class="count__minus">-</button>
-							<p class="count__amount">1</p>
+							<p class="count__amount">5</p>
 							<button class="count__plus">+</button>
 						</div>
 					</div>
-					<p class="modal-product__price">689
+					<p class="modal-product__price"><span class="modal-product__price-count">689</span>
 						<span class="currency">₽</span>
 					</p>
 				</div>

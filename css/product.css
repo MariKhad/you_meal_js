@@ -9,6 +9,7 @@
 }
 
 .product__img {
+	cursor: pointer;
 	width: 100%;
 	object-fit: cover;
 	height: 120px;
