@@ -1,5 +1,5 @@
 //export const API_URL = 'http://localhost:3024';
-export const API_URL = 'http://magic-magic-flavor.glitch.me';
+export const API_URL = 'https://magic-magic-flavor.glitch.me';
 export const PREFIX_PRODUCT = '/api/product';
 export const ModalDeliveryContainerInnerHTML = `<h2 class="modal-delivery__title">Доставка</h2>
 <form class="modal-delivery__form" id="delivery">

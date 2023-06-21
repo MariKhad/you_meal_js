@@ -1,4 +1,4 @@
-import { catalogList, countAmount, modalDelivery, modalDeliveryContainer, modalProductBtn, order, orderCount, orderList, orderSubmit, orderTotalAmount, orderWrapTitle } from "./elements.js";
+import { catalogList, countAmount, modalDelivery, modalDeliveryContainer, modalProductBtn, order, orderClose, orderCount, orderList, orderSubmit, orderTotalAmount, orderWrapTitle } from "./elements.js";
 import { API_URL, ModalDeliveryContainerInnerHTML, PREFIX_PRODUCT } from "./const.js";
 import { getData } from "./getData.js";
 import { orderController } from "./orderController.js";
@@ -106,6 +106,12 @@ const cartController = () => {
 	orderWrapTitle.addEventListener('click', () => {
 		order.classList.toggle('order_open');
 	})
+
+	orderClose.addEventListener('click', () => {
+		order.classList.remove('order_open');
+	})
+
+
 
 	orderSubmit.addEventListener('click', () => {
 		modalDelivery.classList.add('modal_open');

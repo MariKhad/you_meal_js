@@ -23,12 +23,14 @@
 }
 
 .modal-delivery__h2 {
+	padding-top: 10px;
 	font-weight: 600;
 	font-size: 28px;
 	line-height: 1;
 	text-align: center;
 	color: #FF5C00;
 	margin-bottom: 24px;
+
 }
 
 .modal-delivery__h3 {
