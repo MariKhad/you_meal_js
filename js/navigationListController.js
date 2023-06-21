@@ -1,6 +1,7 @@
 import { catalogTitle, navigationBtns, navigationList } from "./elements.js"
+import { renderListProduct } from "./renderListProduct.js";
 
-export const navigationListController = (cb) => {
+export const navigationListController = () => {
 	let activeBtn = navigationList.querySelector('.navigation__button_active');
 	navigationList.addEventListener('click', e => {
 		const categoryItem = e.target.closest('.navigation__button');
@@ -10,7 +11,7 @@ export const navigationListController = (cb) => {
 
 		activeBtn = categoryItem;
 		catalogTitle.textContent = activeBtn.textContent;
-		cb(activeBtn.dataset.category);
+		renderListProduct(activeBtn.dataset.category);
 		activeBtn.classList.add('navigation__button_active');
 	})
 }

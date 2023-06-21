@@ -1,5 +1,6 @@
 export const catalogList = document.querySelector('.catalog__list');
 export const modalProduct = document.querySelector('.modal_product');
+export const modalDelivery = document.querySelector('.modal_delivery');
 
 export const modalProductTitle = document.querySelector('.modal-product__title');
 export const modalProductImg = modalProduct.querySelector('.modal-product__img');
@@ -17,3 +18,8 @@ export const orderList = document.querySelector('.order__list');
 export const orderTotalAmount = document.querySelector('.order__total-amount');
 export const countsOrder = document.querySelectorAll('.order .count');
 export const countModal = document.querySelectorAll('.modal .count');
+export const order = document.querySelector('.order');
+export const orderWrapTitle = document.querySelector('.order__wrap-title');
+export const orderSubmit = document.querySelector('.order__submit');
+export const modalDeliveryForm = modalDelivery.querySelector('.modal-delivery__form');
+export const modalDeliveryContainer = modalDelivery.querySelector('.modal-delivery__container');

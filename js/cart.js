@@ -1,9 +1,9 @@
-import { catalogList, countAmount, modalProductBtn, orderCount, orderList, orderTotalAmount } from "./elements.js";
-import { API_URL, PREFIX_PRODUCT } from "./const.js";
+import { catalogList, countAmount, modalDelivery, modalDeliveryContainer, modalProductBtn, order, orderCount, orderList, orderSubmit, orderTotalAmount, orderWrapTitle } from "./elements.js";
+import { API_URL, ModalDeliveryContainerInnerHTML, PREFIX_PRODUCT } from "./const.js";
 import { getData } from "./getData.js";
-import { countOrderController } from "./countController.js";
+import { orderController } from "./orderController.js";
 
-const getCart = () => {
+export const getCart = () => {
 	const cartList = localStorage.getItem('cart');
 	if (cartList) {
 		return JSON.parse(cartList);
@@ -11,12 +11,17 @@ const getCart = () => {
 		return [];
 };
 
+
+
 const renderCartList = async () => {
 	const cartList = await getCart();
+	orderSubmit.disabled = !cartList.length;
 	const allIdProduct = cartList.map(item => item.id);
 	const data = cartList.length
 		? await getData(`${API_URL}${PREFIX_PRODUCT}?list=${allIdProduct}`)
 		: [];
+
+
 	const countProduct = cartList.reduce((acc, item) => acc + item.count, 0);
 
 	orderCount.textContent = countProduct;
@@ -26,7 +31,7 @@ const renderCartList = async () => {
 		li.classList.add('order__item');
 		li.dataset.idProduct = item.id;
 		const product = cartList.find(cartItem => cartItem.id === item.id);
-		totalPrice += product.count * item.price;
+		//totalPrice += product.count * item.price;
 		li.innerHTML = `
 		<img class="order__img" src="${API_URL}/${item.image}" alt=${item.title}>
 		<div class="order__product">
@@ -39,21 +44,23 @@ const renderCartList = async () => {
 		</p>
 		</div>
 		<div class="order__product-count count">
-		<button class="count__minus">-</button>
+		<button class="count__minus" data-id-product=${product.id}>-</button>
 		<p class="count__amount">${product.count}</p>
-		<button class="count__plus">+</button>
+		<button class="count__plus" data-id-product=${product.id}>+</button>
 		</div>`;
 		return li;
 	})
 	orderList.textContent = '';
 	orderList.append(...cartItems);
-	orderTotalAmount.textContent = totalPrice;
+	orderTotalAmount.textContent = data.reduce((acc, item) => {
+		const product = cartList.find(cartItem => cartItem.id === item.id);
+		return acc + (product.count * item.price);
+	}, 0);
 }
 
 const updateCartList = (cartList) => {
 	localStorage.setItem('cart', JSON.stringify(cartList));
 	renderCartList();
-
 }
 
 export const addCart = (id, count = 1) => {
@@ -79,6 +86,11 @@ export const removeCart = (id) => {
 	updateCartList(cartList);
 };
 
+export const clearCart = () => {
+	localStorage.removeItem('cart');
+	renderCartList();
+}
+
 
 const cartController = () => {
 	catalogList.addEventListener('click', ({ target }) => {
@@ -90,11 +102,22 @@ const cartController = () => {
 		addCart(modalProductBtn.dataset.idProduct,
 			parseInt(countAmount.textContent))
 	})
+
+	orderWrapTitle.addEventListener('click', () => {
+		order.classList.toggle('order_open');
+	})
+
+	orderSubmit.addEventListener('click', () => {
+		modalDelivery.classList.add('modal_open');
+	})
+
+
 };
 
 export const cartInit = () => {
 	cartController();
 	renderCartList();
-	countOrderController();
+	orderController();
+	//	countOrderController();
 }
 
