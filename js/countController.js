@@ -24,24 +24,3 @@ export const countModalController = () => {
 	})
 }
 
-/* export const getOrderCountBtns = () => {
-	const minusesOrder = document.querySelectorAll('.order__product-count .count__minus')
-	console.log('minusesOrder: ', minusesOrder);
-	const plusesOrder = document.querySelectorAll('.order__product-count .count__plus')
-	console.log('plusesOrder: ', plusesOrder);
-
-	return { minusesOrder, plusesOrder };
-}
-
-export const countOrderController = () => {
-	const { minusesOrder, plusesOrder } = getOrderCountBtns();
-	minusesOrder.forEach(minus => {
-		const idMinus = minus.dataset.idProduct;
-		minus.addEventListener('click', removeCart(idMinus));
-	})
-
-	plusesOrder.forEach(plus => {
-		const idPlus = plus.dataset.idProduct;
-		plus.addEventListener('click', addCart(idPlus));
-	})
-}  */
