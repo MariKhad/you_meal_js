@@ -14,6 +14,7 @@ import { renderListProduct } from './renderListProduct.js';
 import { navigationListController } from './navigationListController.js';
 import { addCart, cartInit, removeCart } from './cart.js';
 import { ModalDeliveryContainerInnerHTML } from './const.js';
+import { countModalController } from './countController.js';
 
 
 const closeModalKey = (event) => {
@@ -64,7 +65,7 @@ const init = () => {
 	renderListProduct();
 	navigationListController();
 	cartInit();
-	//countOrderController();
+	countModalController();
 }
 
 init();
