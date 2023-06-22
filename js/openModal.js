@@ -7,7 +7,8 @@ import {
 	ingreditentsList,
 	ingredientsCalories,
 	modalProductPriceCount,
-	modalProductBtn
+	modalProductBtn,
+	countAmount
 } from './elements.js';
 import { getData } from './getData.js';
 
@@ -28,6 +29,8 @@ export const openModal = async (id) => {
 		li.textContent = item;
 		return li;
 	})
+
+	countAmount.textContent = '1';
 
 	ingreditentsList.append(...ingredientsListItems);
 	modalProduct.classList.add('modal_open');
